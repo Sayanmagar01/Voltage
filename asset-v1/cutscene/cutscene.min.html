@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta content="width=2000,height=800,initial-scale=1" name="viewport">
+<title>Cutscene</title>
+<link href="../../css/style.min.css" rel="stylesheet">
+
+<style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+</style>
+
+<video id="cutsceneVideo" autoplay muted playsinline>
+    <source src="PowerOutage.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<audio autoplay>
+    <source src="PowerOutage_audio.ogg" type="audio/ogg">
+    Your browser does not support the audio tag.
+</audio>
+
+<script>
+    setTimeout(function() {
+        let lastPage = localStorage.getItem("lastPage");
+        window.location.href = lastPage ? lastPage : "defaultPage.html";
+    }, 14000);
+    let moreSoundsUnlock = true; 
+	let catchCheck = true;
+    localStorage.setItem("voltage_unlock-moreSounds", moreSoundsUnlock.toString());
+	localStorage.setItem("voltage_unlock-catchCheck", catchCheck.toString());
+</script>
+
+
+
+
